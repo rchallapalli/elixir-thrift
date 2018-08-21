@@ -13,7 +13,7 @@ defmodule Thrift.Mixfile do
   @project_url "https://github.com/pinterest/elixir-thrift"
 
   def project do
-    [app: :thrift_ex,
+    [app: :thrift,
      version: @version,
      elixir: "~> 1.3",
      deps: deps(),
@@ -21,6 +21,8 @@ defmodule Thrift.Mixfile do
      # Build Environment
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:leex, :yecc, :erlang, :elixir, :app],
+     erlc_paths: ["src", "ext/thrift/lib/erl/src"],
+     erlc_include_path: "ext/thrift/lib/erl/include",
 
      # Testing
      test_coverage: [tool: ExCoveralls],
@@ -77,6 +79,8 @@ defmodule Thrift.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{"GitHub" => @project_url},
       files: ~w(README.md LICENSE mix.exs lib) ++
+             ~w(ext/thrift/CHANGES ext/thrift/LICENSE ext/thrift/NOTICE) ++
+             ~w(ext/thrift/README.md ext/thrift/doc ext/thrift/lib/erl) ++
              ~w(src/thrift_lexer.xrl src/thrift_parser.yrl)
      ]
   end
