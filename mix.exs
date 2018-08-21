@@ -13,7 +13,7 @@ defmodule Thrift.Mixfile do
   @project_url "https://github.com/pinterest/elixir-thrift"
 
   def project do
-    [app: :thrift,
+    [app: :thrift_ex,
      version: @version,
      elixir: "~> 1.3",
      deps: deps(),
