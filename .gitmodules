@@ -1,3 +1,0 @@
-[submodule "ext/thrift"]
-	path = ext/thrift
-	url = https://stash.veritas.com/scm/viking/thrift.git
